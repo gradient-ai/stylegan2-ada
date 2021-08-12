@@ -11,7 +11,9 @@ jobs:
         type: volume
     uses: git-checkout@v1
     with:
-      url: https://github.com/gradient-ai/stylegan2-ada.git
+      # url: https://github.com/gradient-ai/stylegan2-ada.git
+      url: context.event.github.url
+      ref: context.event.github.ref
   StyleGan2Ada:
     resources:
       instance-type: P4000
