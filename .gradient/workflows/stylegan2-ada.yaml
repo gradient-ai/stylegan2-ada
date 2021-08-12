@@ -39,10 +39,7 @@ jobs:
 
         cd /inputs/stylegan2Ada
       
-        python generate.py 
-          --outdir=/outputs/generatedFaces 
-          --trunc=1 
-          --seeds=85,265,297,849 \
+        python generate.py --outdir=/outputs/generatedFaces  --trunc=1 --seeds=85,265,297,849 \
           --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/metfaces.pkl
 
       image: nvcr.io/nvidia/tensorflow:20.10-tf1-py3
