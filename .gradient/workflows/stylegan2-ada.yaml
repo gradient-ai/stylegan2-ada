@@ -37,12 +37,13 @@ jobs:
         pip install imageio-ffmpeg==0.4.2
         pip install tqdm==4.49.0
 
-        cd /inputs/stylegan2
+        cd /inputs/stylegan2Ada
       
-        python run_generator.py generate-images \
-          --network=gdrive:networks/stylegan2-ffhq-config-f.pkl \
-          --seeds=6600-6605 \
-          --truncation-psi=0.5 \
-          --result-dir=/outputs/generatedFaces
+        python generate.py 
+          --outdir=/outputs/generatedFaces 
+          --trunc=1 
+          --seeds=85,265,297,849 \
+          --network=https://nvlabs-fi-cdn.nvidia.com/stylegan2-ada/pretrained/metfaces.pkl
+
       image: nvcr.io/nvidia/tensorflow:20.10-tf1-py3
 
